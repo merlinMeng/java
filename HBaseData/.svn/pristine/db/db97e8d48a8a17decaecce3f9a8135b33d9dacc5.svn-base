@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+    <!-- 启用AspectJ对Annotation的支持 -->
+    
+	<aop:aspectj-autoproxy/>  	
+
+	<!-- 扫描包 将spring的注解类自动转化成bean 同时完成bean的注入 -->
+	<context:component-scan base-package="com.sky.proxy" />
+	<context:component-scan base-package="com.sky.service" />
+	<context:component-scan base-package="com.sky.dao" />
+	
+	<!-- 找到jdbc.properties配置文件 让连接数据库和 配置分离，保证数据库账号密码的安全 -->
+	<context:property-placeholder location="classpath:jdbc.properties" />
+	<!-- 配置数据源 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        
+        <property name="initialSize" value="10"></property>
+        <property name="maxIdle" value="20"></property>
+        <property name="minIdle" value="5"></property>
+        <property name="maxActive" value="20"></property>
+        <property name="logAbandoned" value="true"></property>
+        <property name="removeAbandoned" value="true"></property>
+        <property name="removeAbandonedTimeout" value="180"></property>
+        <property name="maxWait" value="1000"></property>
+     </bean>
+    <!-- 配置jdbc模板 -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" 
+    		p:dataSource-ref="dataSource" />
+    
+    <!-- 配置事务管理 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+    		p:dataSource-ref="dataSource" />
+     		
+	
+	<!-- 通过AOP配置提供事务增强，让service包下所有Bean的所有方法拥有事务 -->
+	<aop:config proxy-target-class="true">
+		<aop:pointcut id="serviceMethod"
+			expression=" execution(* com.sky.service..*(..))" />
+		<aop:advisor pointcut-ref="serviceMethod" advice-ref="txAdvice" />
+	</aop:config>
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" />
+		</tx:attributes>
+	</tx:advice>    
+	
+	<bean id="testQuartz" class="com.sky.quartz.ImageQuartz"/>  
+    <bean id="SpringQtzJobMethod" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+	    <property name="targetObject">  
+	        <ref bean="testQuartz"/>  
+	    </property>  
+	    <property name="targetMethod">  <!-- 要执行的方法名称 -->  
+	        <value>execute</value>  
+	    </property>  
+	</bean> 
+	
+	<!-- ======================== 调度触发器 ======================== -->  
+	<bean id="CronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+	    <property name="jobDetail" ref="SpringQtzJobMethod"></property>  
+	    <property name="cronExpression" value="0 0 */1 * * ?"></property>  
+	</bean>  
+   
+	<!-- ======================== 调度工厂 ======================== -->  
+	<bean id="SpringJobSchedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">  
+	    <property name="triggers">  
+	        <list>  
+	            <ref bean="CronTriggerBean"/>  
+	        </list>  
+	    </property>  
+	</bean> 
+		
+    
+</beans>

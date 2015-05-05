@@ -1,0 +1,85 @@
+@charset "gb2312";
+/* CSS Document */
+
+	/*body { font:12px Verdana, Geneva, sans-serif;   margin:0 auto;}*/
+	ul,li { list-style-type:none; padding:0; margn:0 auto;}
+	input { border:0; margin-left:5px;}
+	label { font-size:13px; *display:inline-block; *vertical-align:middle; *height:30px;}
+	
+	.LoginBoard { position: absolute; width:768px; height: 500px; left: 50%; top: 50%; margin-top: -250px; margin-left: -389px;}
+	
+	
+/*头*/		
+	.topmain { margin:0 auto; width:768px; height:93px; background:#FFF;}
+	.toplogo1 { background:url(../images/newLogin/logo.jpg) no-repeat; width:209px; height:64px; float:left; position:relative;}
+	.toplogo2 {	background:url(../images/newLogin/logo1.jpg) no-repeat; width:88px; height:64px; float:left; position:relative;}
+	.toptitle { height:29px; background:#e9eef4; float:right; position:relative; top:26px; text-align:right; padding-right:28px; color:#656565; line-height:29px; }
+	.mess { color:#ff8800; font-size:10px; font-weight:bold;}
+	.mess a  { color:#ff8800; text-decoration:none;}
+	.mess a:hover { color:#ff8800; text-decoration:underline;}
+	.mess a:visited { color:#ff8800; text-decoration:underline;}
+	.mess a:active { color:#ff8800; text-decoration:underline;}
+	
+	a.helpt  { color:#656565; text-decoration:none;}
+ 	a:hover	.helpt { color:#656565; text-decoration:underline;}
+	a:visited.helpt  { color:#656565; text-decoration:underline;}
+	a:active.helpt  { color:#656565; text-decoration:underline;}	
+	
+/*中间*/	
+	.centerback1 { margin:0 auto; width:768px; height:358px; background:url(../images/newLogin/back.jpg) no-repeat;}
+	.centerback2 { margin:0 auto; width:768px; height:358px; background:url(../images/newLogin/back1.jpg) no-repeat;}
+	.centerback3 { margin:0 auto; width:768px; height:358px; background:url(../images/newLogin/back2.jpg) no-repeat;}
+	.centerback4 { margin:0 auto; width:768px; height:358px; background:url(../images/newLogin/back3.jpg) no-repeat;}
+	.fonttitle{ font-size:18px ; font-weight:bold; color:#004b8b; padding:12px 0 0 25px; width:400px; position:relative; float:left;}
+	.logintitle { font-size:14px; font-weight:bold; color:#414141;  background:url(../images/newLogin/ico.jpg) no-repeat 1px 1px; padding:24px 0 0 40px; width:200px; height:36px;}
+	.kmtitle { font-size:14px; font-weight:bold; color:#ff0000; height:40px; padding:10px 0 0 0; }
+	.mbh { font-size:10px; color:#CCC;}
+	
+	
+	
+/*	登录框*/
+	.back { margin:0; width:301px; height:321px; position:relative; float:right; display:inline;}
+	.login {  left:445px; top:195px; height:188px; width:260px; margin:0; padding:0 0 0 24px;}
+	
+/*文字提示*/	
+	.ts1,.ts2{ color:#7c7c7c; height:27px; *height:20px; line-height:27px; *line-height:15px;  padding-left:45px;}
+	.ts1{ color:#7c7c7c;}
+	.ts2{ color:#fe8f11;}
+	.ts2 a:link { color:#fe8f11; text-decoration:underline;}
+	.ts2 a:hover { color:#bf6702; text-decoration:underline}
+	.ts2 a:visited {color:#fe8f11; text-decoration:underline;}
+	.ts2 a:active {color:#fe8f11; text-decoration:underline;}
+
+/*输入框*/	
+	 .back-y,.back-on { width:192px; height:28px; font:14px Verdana, Geneva, sans-serif; line-height:25px; padding-left:10px;}
+	 .back-y {  background:url(../images/newLogin/input_m.jpg) no-repeat; }
+	 .back-on { background:url(../images/newLogin/input_o.jpg) no-repeat;}
+	 
+	 .back-yzm,.back-yzmd { width:83px; height:28px; font:14px Verdana, Geneva, sans-serif; line-height:25px; padding-left:10px;}
+	 .back-yzm {  background:url(../images/newLogin/input1_m.jpg) no-repeat; }
+	 .back-yzmd { background:url(../images/newLogin/input1_o.jpg) no-repeat;}
+	 
+	
+/*foot*/	
+	 .useKey{float: right;margin-top: -25px;margin-right: 10px;}	 
+	 .foot { margin:0 auto; width:748px; height:50px; background:#e9eef4; line-height:50px; color:#656565; padding-left:20px;} 
+/*botton*/
+	.bottonm {margin:10px 0 0 40px; *margin:3px 0 0 40px;}
+	.loginBtn,.loginBtn-on,.loginBtn-down{ width:90px; height:30px;cursor:hand;}
+	.loginBtn{  background:url(../images/newLogin/botton1.jpg) no-repeat;}
+	.loginBtn-on{ background:url(../images/newLogin/botton1_on.jpg) no-repeat;}
+	.loginBtn-down{ background:url(../images/newLogin/botton1_down.jpg) no-repeat; }
+	
+	.botton2,.botton2-on,.botton2-down{ width:90px; height:30px;cursor:hand; margin-left:15px;}
+	.botton2{  background:url(../images/newLogin/botton2.jpg) no-repeat;}
+	.botton2-on{ background:url(../images/newLogin/botton2_on.jpg) no-repeat;}
+	.botton2-down{ background:url(../images/newLogin/botton2_down.jpg) no-repeat; }
+
+/*document*/
+
+	.docu { width:440px; height:70px; position:relative; top:215px; left:0; float:left; line-height:20px;}
+	.docu a { color:#676969; text-decoration:none; background:url(../images/newLogin/ico1.jpg) no-repeat 5px 3px; padding-left:13px; }
+	.docu a:link { color:#676969; text-decoration:none;}
+	.docu a:hover { color:#363636; text-decoration:underline}
+	.docu a:visited {color:#676969; text-decoration:underline;}
+	.docu a:active {color:#676969; text-decoration:underline;}

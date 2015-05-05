@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="HBaseData"
+  id="myeclipse.1422588482723"
+  context-root="/HBaseData"
+  j2ee-spec="5.0"
+  archive="HBaseData.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

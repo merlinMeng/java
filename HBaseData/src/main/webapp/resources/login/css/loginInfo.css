@@ -1,0 +1,41 @@
+	
+	.from-title,.table-title {background:url(../images/loginInfo/back.gif) repeat-x;}
+	body { font:12px Verdana, Geneva, sans-serif; margin:0 auto; width:100%; height:100%;background: url(../images/loginInfo/back.gif) repeat-x center -72px;}
+	div,ul,li { list-style-type:none; text-align:left; margin:0; padding:0;}
+	.from-skin { width:768px; height:auto; left:50%; top:0;  margin:0 0 0 -384px; position:absolute;}
+
+/* 头部背景（不循环）*/
+	.from-topimg,.from-titlel,.from-titler { background:url(../images/loginInfo/back1.gif) no-repeat;}
+	
+	.from-logo { position:relative; left:19px; top:0; width:154px; height:57px;}
+	.from-topimg  { position:relative; width:550px; height:57px; top:-57px; float:right; background-position:right -57px;}
+	
+	.from-title { width:100%; height:37px;position:absolute; background-position:left top; left:0;}
+	.from-titlel {width:100%; height:37px; position:relative; background-position:left -114px; }
+	.from-titler {width:98%;  height:27px; font-size:14px; position:relative;background-position:right -151px; float:right; text-align:left; padding:10px 2px 0 2%; }
+
+/*带框白底*/
+	.from-tablel{ width:100%; border:1px #bac9f3 solid; background-color:#FFF; position:absolute; left:0; top:90px; text-align:center; margin:auto;}
+	
+/*内部标题及文字大小*/		
+	.table-font { font-size:14px;margin-top:30px;}
+	
+/*表单休饰*/
+	.from-text { border:1px #e0e0e0 solid; height:20px; background:url(../images/loginInfo/from_text_back.gif) repeat-x; font-size:14px; padding-top:5px;}
+	.from-b { color:#F00;}
+	.from-zs { color:#999999; font-size:12px;}
+	
+	.pass-y,.pass-r,.pass-z,.pass-q { background:url(../images/loginInfo/pass.gif) no-repeat; height:8px; width:150px;}
+	.pass-y { background-position:top left;}
+	.pass-r { background-position: left -8px;}
+	.pass-z { background-position: left -16px;}
+	.pass-q { background-position: left -24px;}
+	
+	.from-botton { width:95%; text-align:center; padding-top:10px;margin-bottom:20px;}
+	.botton1,.botton1-on,.botton1-down{ width:90px; height:26px;cursor:hand; background:url(../images/loginInfo/botton.gif) no-repeat; border:0;}
+	.botton1{ background-position:left top;}
+	.botton1-on{ background-position:left -26px;}
+	.botton1-down{  background-position:left -52px;}
+
+	.find{margin:0;padding:0;width:62px;height:25px;background:url(../images/login/find.gif) no-repeat;border:0;cursor:hand;}
+	.search{margin:0;padding:0;width:62px;height:25px;line-height:25px;background:url(../images/loginInfo/backbtn.gif) no-repeat;border:0;cursor:hand;font-size:12px;font-weight: bold;}
